@@ -25,7 +25,7 @@ export default function ContactUs() {
 
   return (
     <div
-      className={`${fontBadScript.className} bg-gradient-to-b from-gray-800 via-gray-500 to-gray-300 min-h-screen flex flex-col items-center justify-center py-10 px-6`}
+      className={`${fontBadScript.className} bg-gradient-to-b from-gray-800 via-gray-500 to-gray-300 min-h-screen flex flex-col items-center justify-center pt-16 px-6`}
     >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -33,18 +33,16 @@ export default function ContactUs() {
         transition={{ duration: 0.7 }}
         className="max-w-3xl w-full bg-white p-8 rounded-lg shadow-[4px_4px_10px_rgba(0,0,0,0.5),inset_4px_4px_10px_rgba(0,0,0,0.3)]"
       >
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-6">
+        <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
           Get in Touch
         </h2>
-        <p className="text-center text-gray-600 mb-8 text-sm md:text-base">
+        <p className="text-lg text-center text-gray-600 mb-8">
           Have questions or need assistance? We're here to help! Reach out via
           the form below or contact us directly.
         </p>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-gray-700 mb-1 text-sm md:text-base">
-              Name
-            </label>
+            <label className="block text-gray-700 mb-1">Name</label>
             <Input
               type="text"
               name="name"
@@ -56,9 +54,7 @@ export default function ContactUs() {
             />
           </div>
           <div>
-            <label className="block text-gray-700 mb-1 text-sm md:text-base">
-              Email
-            </label>
+            <label className="block text-gray-700 mb-1">Email</label>
             <Input
               type="email"
               name="email"
@@ -70,9 +66,7 @@ export default function ContactUs() {
             />
           </div>
           <div>
-            <label className="block text-gray-700 mb-1 text-sm md:text-base">
-              Message
-            </label>
+            <label className="block text-gray-700 mb-1">Message</label>
             <Textarea
               name="message"
               placeholder="Write your message here..."
@@ -84,7 +78,7 @@ export default function ContactUs() {
           </div>
           <Button
             type="submit"
-            className="text-sm md:text-base w-full hover:scale-105 transition-transform duration-300 cursor-pointer"
+            className="w-full hover:scale-105 transition-transform duration-300"
           >
             Send Message
           </Button>
@@ -93,14 +87,14 @@ export default function ContactUs() {
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="mt-4 text-center text-green-600 font-semibold text-sm md:text-base"
+            className="mt-4 text-center text-green-600 font-semibold text-lg"
           >
             Thank you! Your message has been sent.
           </motion.p>
         )}
       </motion.div>
-      <div className="mt-12 text-center text-sm md:text-base">
-        <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800">
+      <div className="mt-12 text-center text-sm">
+        <h3 className="text-xl font-semibold text-gray-800">
           Other Ways to Reach Us
         </h3>
         <p className="text-gray-600 mt-2">

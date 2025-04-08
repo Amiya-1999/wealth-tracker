@@ -46,7 +46,7 @@ export default function UserGuide() {
 
   return (
     <div
-      className={`${fontLeagueSpartan.className} bg-gradient-to-b from-gray-600 to-gray-400 min-h-screen flex flex-col items-center py-3 sm:py-6 lg:py-10 px-2 sm:px-4 lg:px-6`}
+      className={`${fontLeagueSpartan.className} bg-gradient-to-b from-gray-600 to-gray-400 min-h-screen flex flex-col items-center pt-24 pb-4 px-2 sm:px-4 lg:px-6`}
     >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -57,21 +57,19 @@ export default function UserGuide() {
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-6">
           User Guide
         </h2>
-        <p className="text-center text-gray-600 mb-8 text-sm md:text-base">
+        <p className="text-center text-gray-600 mb-8 text-base sm:text-lg lg:text-xl">
           A detailed guide to help you make the most out of our platform.
         </p>
         <Accordion type="single" collapsible className="w-full">
           {guideSections.map((section, index) => (
             <AccordionItem value={`item-${index}`} key={index}>
-              <AccordionTrigger className="text-sm md:text-base">
-                {section.title}
-              </AccordionTrigger>
+              <AccordionTrigger>{section.title}</AccordionTrigger>
               <AccordionContent>
                 <motion.p
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: "auto" }}
                   transition={{ duration: 0.5 }}
-                  className="text-gray-700 p-4 text-xs md:text-sm"
+                  className="text-gray-700 p-4 text-sm"
                 >
                   {section.content}
                 </motion.p>

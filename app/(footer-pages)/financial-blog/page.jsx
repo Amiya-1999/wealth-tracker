@@ -62,7 +62,7 @@ const FinancialBlogPage = () => {
 
   return (
     <div
-      className={`${fontCormorantGaramond.className} bg-gradient-to-b from-gray-800 via-gray-500 to-gray-300 min-h-screen p-6`}
+      className={`${fontCormorantGaramond.className} bg-gradient-to-b from-gray-800 via-gray-500 to-gray-300 min-h-screen p-6 pt-24`}
     >
       <div className="max-w-5xl mx-auto text-center">
         <motion.h1
@@ -73,14 +73,14 @@ const FinancialBlogPage = () => {
         >
           Explore Financial Blogs
         </motion.h1>
-        <p className="text-gray-200 mt-2 text-xs sm:text-sm lg:text-base">
+        <p className="text-gray-200 mt-2 text-xl sm:text-2xl lg:text-3xl">
           Enhance your financial knowledge with these trusted sources.
         </p>
         <div className="mt-6 max-w-lg mx-auto flex flex-wrap gap-2">
           <Input placeholder="Search articles..." className="flex-1" />
           <Button
             variant="default"
-            className="cursor-pointer text-sm sm:text-base lg:text-lg hover:scale-105 transition-transform duration-300"
+            className="text-lg hover:scale-105 transition-transform duration-300"
           >
             Search
           </Button>
@@ -93,7 +93,7 @@ const FinancialBlogPage = () => {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-md text-xs sm:text-sm lg:text-base font-medium transition cursor-pointer ${
+            className={`text-lg px-4 py-2 rounded-md font-medium transition cursor-pointer ${
               selectedCategory === category
                 ? "bg-gray-900 text-white"
                 : "bg-gray-300 text-gray-700 hover:bg-gray-400"
@@ -115,16 +115,12 @@ const FinancialBlogPage = () => {
             viewport={{ once: true }}
             className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-transform hover:scale-105"
           >
-            <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800">
-              {blog.name}
-            </h3>
-            <p className="text-gray-600 mt-2 text-xs sm:text-sm lg:text-base">
-              {blog.description}
-            </p>
+            <h3 className="text-xl font-semibold text-gray-800">{blog.name}</h3>
+            <p className="text-gray-600 mt-2 text-lg">{blog.description}</p>
             <Link
               href={blog.url}
               target="_blank"
-              className="mt-3 text-sm md:text-base inline-block text-blue-600 hover:underline"
+              className="mt-3 inline-block text-blue-600 hover:underline"
             >
               Visit Blog →
             </Link>
@@ -134,13 +130,13 @@ const FinancialBlogPage = () => {
 
       {/* Suggest a Blog */}
       <div className="max-w-3xl mx-auto bg-gray-200 p-6 rounded-lg text-center mt-12">
-        <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800">
+        <h3 className="text-xl font-semibold text-gray-800">
           Know a great blog?
         </h3>
-        <p className="text-gray-600 mt-2 text-sm md:text-base">
+        <p className="text-gray-600 mt-2">
           Suggest a financial blog that we should add to the list.
         </p>
-        <button className="text-sm sm:text-base lg:text-lg mt-3 cursor-pointer bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition hover:scale-105 duration-300">
+        <button className="text-lg mt-3 cursor-pointer bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition hover:scale-105 duration-300">
           Submit Suggestion
         </button>
       </div>
@@ -153,17 +149,15 @@ const FinancialBlogPage = () => {
         transition={{ duration: 0.8 }}
         className="mt-16 text-center bg-gray-800 text-white p-10 rounded-lg"
       >
-        <h2 className="text-lg sm:text-xl lg:text-2xl font-bold">
-          Subscribe to Our Newsletter
-        </h2>
-        <p className="text-gray-300 mt-2 text-sm md:text-base">
+        <h2 className="text-2xl font-bold">Subscribe to Our Newsletter</h2>
+        <p className="text-gray-300 mt-2">
           Get the latest financial insights delivered to your inbox.
         </p>
         <div className="mt-4 flex flex-wrap gap-2 max-w-lg mx-auto">
           <Input placeholder="Enter your email" className="flex-1" />
           <Button
             variant="secondary"
-            className="text-sm sm:text-base lg:text-lg cursor-pointer hover:scale-105 transition-transform duration-300"
+            className="text-lg hover:scale-105 transition-transform duration-300"
           >
             Subscribe
           </Button>

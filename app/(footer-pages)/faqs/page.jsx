@@ -74,7 +74,7 @@ export default function FAQ() {
 
   return (
     <div
-      className={`${fontLeagueSpartan.className} bg-gradient-to-b from-gray-600 to-gray-400 min-h-screen flex flex-col items-center py-4 sm:py-8 lg:py-12 px-2 sm:px-4 lg:px-6`}
+      className={`${fontLeagueSpartan.className} bg-gradient-to-b from-gray-600 to-gray-400 min-h-screen flex flex-col items-center pt-24 pb-4 px-2 sm:px-4 lg:px-6`}
     >
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -82,16 +82,16 @@ export default function FAQ() {
         transition={{ duration: 0.6 }}
         className="max-w-4xl w-full bg-white p-8 rounded-lg shadow-lg"
       >
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-6">
+        <h2 className="text-3xl font-bold text-gray-800 text-center mb-6">
           Frequently Asked Questions
         </h2>
-        <p className="text-center text-gray-600 mb-8 text-sm md:text-base">
+        <p className="text-lg text-center text-gray-600 mb-8">
           Find answers to the most common questions about our platform.
         </p>
 
         {faqData.map((section, sectionIndex) => (
           <div key={sectionIndex} className="mb-6">
-            <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-700 mb-3 border-b pb-2">
+            <h3 className="text-lg font-semibold text-gray-700 mb-3 border-b pb-2">
               {section.category}
             </h3>
             {section.questions.map((item, index) => (
@@ -103,7 +103,7 @@ export default function FAQ() {
                   onClick={() => toggleFAQ(`${sectionIndex}-${index}`)}
                   className="w-full text-left p-4 flex justify-between items-center bg-gray-50 hover:bg-gray-100"
                 >
-                  <span className="font-medium text-gray-800 text-sm md:text-base">
+                  <span className="font-medium text-gray-800">
                     {item.question}
                   </span>
                   <FaChevronDown
@@ -124,9 +124,7 @@ export default function FAQ() {
                   transition={{ duration: 0.1 }}
                   className="overflow-hidden bg-white px-4 pb-4"
                 >
-                  <p className="text-gray-600 text-xs md:text-sm">
-                    {item.answer}
-                  </p>
+                  <p className="text-gray-600 text-sm">{item.answer}</p>
                 </motion.div>
               </div>
             ))}

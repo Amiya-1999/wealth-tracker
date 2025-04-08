@@ -38,7 +38,7 @@ const termsData = [
 export default function TermsAndConditions() {
   return (
     <div
-      className={`${fontDancingScript.className} bg-gradient-to-b from-gray-600 to-gray-400 min-h-screen py-3 sm:py-6 lg:py-10 px-2 sm:px-4 lg:px-6 flex flex-col items-center`}
+      className={`${fontDancingScript.className} bg-gradient-to-b from-gray-600 to-gray-400 min-h-screen pt-24 pb-4 px-2 sm:px-4 lg:px-6 flex flex-col items-center`}
     >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -49,7 +49,7 @@ export default function TermsAndConditions() {
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-6">
           Terms & Conditions
         </h2>
-        <p className="text-center text-gray-600 mb-8 text-sm md:text-base">
+        <p className="text-center text-gray-600 mb-8 text-lg sm:text-xl lg:text-2xl">
           Please read these terms carefully before using our services.
         </p>
 
@@ -62,20 +62,16 @@ export default function TermsAndConditions() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="bg-gray-50 p-4 rounded-lg shadow-md"
             >
-              <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-700 mb-2">
+              <h3 className="text-lg font-semibold text-gray-700 mb-2">
                 {section.title}
               </h3>
-              <p className="text-gray-600 text-xs sm:text-sm lg:text-base">
-                {section.content}
-              </p>
+              <p className="text-gray-600">{section.content}</p>
             </motion.div>
           ))}
         </div>
-        <div className="mt-10 text-center text-xs sm:text-sm lg:text-base">
-          <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800">
-            Contact Us
-          </h3>
-          <p className="text-gray-600 mt-2">
+        <div className="mt-10 text-center">
+          <h3 className="text-lg font-semibold text-gray-800">Contact Us</h3>
+          <p className="text-gray-600 mt-2 text-sm">
             If you have any questions about these terms, reach out to us at:
           </p>
           <p className="text-blue-600 mt-2">support@wealthtracker.com</p>

@@ -121,3 +121,20 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  .gradient {
+    @apply bg-gradient-to-br from-blue-600 to-purple-600;
+  }
+
+  .gradient-title {
+    @apply font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text;
+  }
+
+  .image-bg {
+    background-image: url("/assets/images/BackTextImage.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+  }
+}

@@ -32,7 +32,7 @@ export default function PrivacyPolicy() {
 
   return (
     <div
-      className={`${fontDancingScript.className} bg-gradient-to-b from-gray-600 to-gray-400 min-h-screen py-3 sm:py-6 lg:py-10 px-2 sm:px-4 lg:px-6 flex flex-col items-center`}
+      className={`${fontDancingScript.className} bg-gradient-to-b from-gray-600 to-gray-400 min-h-screen pt-24 pb-4 px-2 sm:px-4 lg:px-6 flex flex-col items-center`}
     >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -43,7 +43,7 @@ export default function PrivacyPolicy() {
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-6">
           Privacy Policy
         </h2>
-        <p className="text-center text-gray-600 mb-8 text-sm md:text-base">
+        <p className="text-center text-gray-600 mb-8 text-lg sm:text-xl lg:text-2xl">
           Your privacy is important to us. This policy explains how we collect,
           use, and protect your information.
         </p>
@@ -51,12 +51,10 @@ export default function PrivacyPolicy() {
         <div className="space-y-6">
           {policies.map((policy, index) => (
             <section key={index}>
-              <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-700">
+              <h3 className="text-lg font-semibold text-gray-700">
                 {policy.heading}
               </h3>
-              <p className="text-gray-600 mt-2 text-xs sm:text-sm lg:text-base">
-                {policy.desc}
-              </p>
+              <p className="text-gray-600 mt-2">{policy.desc}</p>
             </section>
           ))}
         </div>

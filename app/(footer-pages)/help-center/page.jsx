@@ -55,7 +55,7 @@ export default function HelpCenter() {
 
   return (
     <div
-      className={`${fontLeagueSpartan.className} bg-gradient-to-b from-gray-600 to-gray-400 min-h-screen py-3 sm:py-6 lg:py-10 px-2 sm:px-4 lg:px-6 flex flex-col items-center`}
+      className={`${fontLeagueSpartan.className} bg-gradient-to-b from-gray-600 to-gray-400 min-h-screen pt-24 pb-4 px-2 sm:px-4 lg:px-6 flex flex-col items-center`}
     >
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -66,7 +66,7 @@ export default function HelpCenter() {
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-800 text-center mb-6 flex items-center justify-center">
           <FaQuestionCircle className="mr-2 text-blue-600" /> Help Center
         </h2>
-        <p className="text-center text-gray-600 mb-8 text-sm md:text-base">
+        <p className="text-center text-gray-600 mb-8 text-base sm:text-lg lg:text-xl">
           Find answers to your questions and get the support you need.
         </p>
         <div className="space-y-6">
@@ -75,14 +75,14 @@ export default function HelpCenter() {
               key={sectionIndex}
               className="bg-gray-50 p-4 rounded-lg shadow-md"
             >
-              <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-700 mb-4">
+              <h3 className="text-lg font-semibold text-gray-700 mb-4">
                 {section.category}
               </h3>
               {section.questions.map((item, index) => (
                 <div key={index} className="mb-3 border-b border-gray-300">
                   <button
                     onClick={() => toggleFAQ(`${sectionIndex}-${index}`)}
-                    className="text-sm md:text-base w-full text-left py-2 flex justify-between items-center font-medium text-gray-800"
+                    className="w-full text-left py-2 flex justify-between items-center font-medium text-gray-800"
                   >
                     {item.q}
                     <span className="text-gray-600">
@@ -94,7 +94,7 @@ export default function HelpCenter() {
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       transition={{ duration: 0.3 }}
-                      className="text-gray-600 py-2 text-xs md:text-sm"
+                      className="text-gray-600 py-2 text-sm"
                     >
                       {item.a}
                     </motion.p>
@@ -105,13 +105,13 @@ export default function HelpCenter() {
           ))}
         </div>
         <div className="mt-10 text-center">
-          <h3 className="text-base sm:text-lg lg:text-xl font-semibold text-gray-800">
+          <h3 className="text-xl font-semibold text-gray-800">
             Still Need Help?
           </h3>
-          <p className="text-gray-600 mt-2 text-sm md:text-base">
+          <p className="text-gray-600 mt-2">
             Contact our support team for more assistance.
           </p>
-          <div className="flex flex-wrap items-center justify-center space-x-6 mt-4 text-xs md:text-sm">
+          <div className="flex flex-wrap items-center justify-center space-x-6 mt-4 text-sm">
             <a
               href="mailto:support@wealthmanager.com"
               className="text-blue-600 flex items-center"

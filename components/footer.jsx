@@ -16,7 +16,7 @@ import {
   FaNewspaper,
   FaBookOpen,
 } from "react-icons/fa";
-import { fontDelius } from "./fonts";
+import { fontDelius } from "../app/fonts";
 import Link from "next/link";
 import {
   NavigationMenu,
@@ -30,7 +30,7 @@ import { motion } from "framer-motion";
 export default function Footer() {
   return (
     <footer
-      className={`${fontDelius.className} bg-gray-900 text-gray-300 py-5 sm:py-10 text-center`}
+      className={`${fontDelius.className} bg-gray-900 text-gray-300 py-10 px-2 text-center`}
     >
       <motion.div
         initial={{ opacity: 0 }}
@@ -42,12 +42,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo & Short Description */}
           <div>
-            <motion.h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-white">
+            <motion.h2 className="text-2xl font-semibold text-white">
               Wealth Tracker
             </motion.h2>
             <motion.p
               transition={{ delay: 0.2 }}
-              className="mt-2 text-xs sm:text-sm text-gray-400"
+              className="mt-2 text-gray-400"
             >
               Track, plan, and grow your finances effortlessly with our powerful
               tools.
@@ -55,39 +55,36 @@ export default function Footer() {
           </div>
 
           {/* Navigation Links */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-5 lg:gap-6 text-xs sm:text-sm">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-5 lg:gap-6">
             <Link
               href="/"
               className="h-fit flex items-center hover:text-white transition"
             >
-              <FaHome className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" /> Home
+              <FaHome className="mr-1 w-4 h-4" /> Home
             </Link>
             <Link
               href="/about"
               className="h-fit flex items-center hover:text-white transition"
             >
-              <FaInfoCircle className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" /> About
-              Us
+              <FaInfoCircle className="mr-1 w-4 h-4" /> About Us
             </Link>
             <Link
               href="/financial-blog"
               className="h-fit flex items-center hover:text-white transition"
             >
-              <FaNewspaper className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" />{" "}
-              Financial Blog
+              <FaNewspaper className="mr-1 w-4 h-4" /> Financial Blog
             </Link>
             <Link
               href="/contact"
               className="h-fit flex items-center hover:text-white transition"
             >
-              <FaEnvelope className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" /> Contact
-              Us
+              <FaEnvelope className="mr-1 w-4 h-4" /> Contact Us
             </Link>
             <NavigationMenu className="h-fit flex-col">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-white transition cursor-pointer text-xs sm:text-sm">
-                    <FaHandsHelping className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                  <NavigationMenuTrigger className="hover:text-white transition cursor-pointer text-base">
+                    <FaHandsHelping className="mr-1 w-4 h-4" />
                     Help & Support
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="z-10 bg-gray-800 text-gray-300 rounded-lg flex flex-col !w-max space-y-4 p-4">
@@ -95,21 +92,21 @@ export default function Footer() {
                       href="/faqs"
                       className="flex items-center justify-center hover:text-white transition"
                     >
-                      <FaQuestionCircle className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                      <FaQuestionCircle className="mr-1 w-4 h-4" />
                       FAQs
                     </Link>
                     <Link
                       href="/user-guide"
                       className="flex items-center justify-center hover:text-white transition"
                     >
-                      <FaBookOpen className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" />{" "}
+                      <FaBookOpen className="mr-1 w-4 h-4" />
                       User Guide
                     </Link>
                     <Link
                       href="/help-center"
                       className="flex items-center justify-center hover:text-white transition"
                     >
-                      <FaHeadphonesAlt className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                      <FaHeadphonesAlt className="mr-1 w-4 h-4" />
                       Help Center
                     </Link>
                   </NavigationMenuContent>
@@ -119,8 +116,8 @@ export default function Footer() {
             <NavigationMenu className="h-fit flex-col">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="hover:text-white transition cursor-pointer text-xs sm:text-sm">
-                    <FaGavel className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                  <NavigationMenuTrigger className="hover:text-white transition cursor-pointer text-base">
+                    <FaGavel className="mr-1 w-4 h-4" />
                     Legal
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="z-10 bg-gray-800 text-gray-300 rounded-lg flex flex-col !w-max space-y-4 p-4">
@@ -128,14 +125,14 @@ export default function Footer() {
                       href="/privacy-policy"
                       className="flex items-center justify-center hover:text-white transition"
                     >
-                      <FaShieldAlt className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                      <FaShieldAlt className="mr-1 w-4 h-4" />
                       Privacy Policy
                     </Link>
                     <Link
                       href="/terms-conditions"
                       className="flex items-center justify-center hover:text-white transition"
                     >
-                      <FaFile className="mr-1 w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                      <FaFile className="mr-1 w-4 h-4" />
                       Terms & Conditions
                     </Link>
                   </NavigationMenuContent>
@@ -146,44 +143,42 @@ export default function Footer() {
 
           {/* Social Media Icons */}
           <div className="flex flex-col items-center">
-            <p className="text-xs sm:text-sm text-gray-400">
-              Connect with us on social media
-            </p>
+            <p className="text-gray-400">Connect with us on social media</p>
             <div className="mt-6 flex space-x-6">
               <a
                 href="https://github.com/Amiya-1999/"
                 className="hover:text-white"
                 target="_blank"
               >
-                <FaGithub className="w-4 h-4 sm:w-5 sm:h-5 hover:-translate-y-2 transition-transform duration-300" />
+                <FaGithub className="w-6 h-6 hover:-translate-y-2 transition-transform duration-300" />
               </a>
               <a
                 href="https://www.linkedin.com/in/amiya-dey/"
                 className="hover:text-white"
                 target="_blank"
               >
-                <FaLinkedin className="w-4 h-4 sm:w-5 sm:h-5 hover:-translate-y-2 transition-transform duration-300" />
+                <FaLinkedin className="w-6 h-6 hover:-translate-y-2 transition-transform duration-300" />
               </a>
               <a
                 href="https://www.facebook.com/amiya.dey.5621"
                 className="hover:text-white"
                 target="_blank"
               >
-                <FaFacebook className="w-4 h-4 sm:w-5 sm:h-5 hover:-translate-y-2 transition-transform duration-300" />
+                <FaFacebook className="w-6 h-6 hover:-translate-y-2 transition-transform duration-300" />
               </a>
               <a
                 href="https://www.instagram.com/romeo.19.99/"
                 className="hover:text-white"
                 target="_blank"
               >
-                <FaInstagram className="w-4 h-4 sm:w-5 sm:h-5 hover:-translate-y-2 transition-transform duration-300" />
+                <FaInstagram className="w-6 h-6 hover:-translate-y-2 transition-transform duration-300" />
               </a>
             </div>
           </div>
         </div>
 
         {/* Copyright */}
-        <div className="mt-8 text-center border-t border-gray-700 pt-6 text-xs sm:text-sm">
+        <div className="mt-8 text-center border-t border-gray-700 pt-6 text-sm">
           © {new Date().getFullYear()} Wealth Tracker. All rights reserved
           <br />
           Financial success starts with smart, responsible and informed wealth

@@ -1,6 +1,12 @@
 "use client";
 import { fontCormorantGaramond } from "@/app/fonts";
 import { Button } from "@/components/ui/button";
+import {
+  featuresData,
+  howItWorksData,
+  statsData,
+  testimonialsData,
+} from "@/data/insights-data";
 import { motion } from "framer-motion";
 import {
   CheckCircle,
@@ -10,6 +16,7 @@ import {
   Users,
   Clock,
 } from "lucide-react";
+import Image from "next/image";
 
 const AboutPage = () => {
   const sectionVariants = {
@@ -68,84 +75,92 @@ const AboutPage = () => {
 
   return (
     <div
-      className={`${fontCormorantGaramond.className} min-h-screen bg-gradient-to-b from-gray-800 via-gray-500 to-gray-300 text-white`}
+      className={`${fontCormorantGaramond.className} min-h-screen bg-gradient-to-b from-gray-800 via-gray-500 to-gray-300 text-white pt-20`}
     >
       {/* Hero Section */}
       <motion.section
-        className="text-center py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-16 rounded-b-xl"
+        className="text-center py-12 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-16 rounded-b-xl"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
       >
-        <motion.h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold mb-4">
+        <motion.h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
           Take Control of Your Financial Future
         </motion.h1>
-        <motion.p className="text-sm sm:text-base lg:text-lg text-gray-300 mb-6">
+        <motion.p className="text-xl sm:text-2xl lg:text-3xl text-gray-300">
           Wealth Tracker helps you track, analyze, and grow your wealth
           effortlessly.
         </motion.p>
-        <Button
-          variant="secondary"
-          className="text-xs sm:text-sm lg:text-base px-6 py-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
-        >
-          Get Started
-        </Button>
       </motion.section>
 
       {/* About Wealth Tracker */}
       <motion.section
-        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-16 text-center"
+        className="py-12 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-16 text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
       >
-        <motion.h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6">
+        <motion.h2 className="text-3xl font-semibold mb-6">
           About Wealth Tracker
         </motion.h2>
-        <motion.p className="text-xs sm:text-sm lg:text-base text-gray-200 max-w-3xl mx-auto">
+        <motion.p className="text-lg text-gray-300 max-w-3xl mx-auto mb-12">
           Wealth Tracker is a powerful financial management platform designed to
           help individuals and businesses achieve financial freedom. Our
           platform provides deep insights, intuitive budgeting tools, and
           AI-driven investment tracking to empower users with knowledge and
           control over their finances.
         </motion.p>
+        <Button
+          variant="primary"
+          className="bg-gray-800 text-lg px-6 py-3 hover:scale-105 transition-transform duration-300"
+        >
+          Start Managing Your Wealth
+        </Button>
       </motion.section>
 
       {/* Features Section */}
       <motion.section
-        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-16 rounded-xl"
+        className="py-12 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-16 rounded-xl text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
       >
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-center mb-10">
+        <h2 id="features" className="text-3xl font-semibold text-center mb-6">
           Key Features
         </h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {features.map((feature, index) => (
+        <p className="text-lg max-w-3xl mx-auto mb-10 text-gray-300">
+          Discover a comprehensive suite of features tailored to help you
+          manage, monitor, and maximize your financial well-being. Our platform
+          combines intuitive design with powerful analytics to deliver clear,
+          actionable insights—empowering you to make informed decisions with
+          confidence.
+        </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          {featuresData.map((feature, index) => (
             <motion.div
               key={index}
-              className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center hover:shadow-xl"
+              className={`bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center hover:shadow-xl ${
+                featuresData.length % 2 === 0 &&
+                index === featuresData.length - 1
+                  ? "lg:col-span-3 mx-auto"
+                  : ""
+              }`}
               variants={{
                 hidden: { opacity: 0, scale: 0.5 },
                 visible: {
                   opacity: 1,
                   scale: 1,
-                  transition: { duration: 0.7, delay: index * 0.3 },
+                  transition: { duration: 0.5, delay: index * 0.3 },
                 },
               }}
               whileHover={{ scale: 1.05 }}
             >
-              <feature.icon className="text-blue-500 w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 mb-4" />
-              <h3 className="text-sm sm:text-base lg:text-lg font-semibold mb-2">
-                {feature.title}
-              </h3>
-              <p className="text-xs sm:text-sm lg:text-base text-gray-300 text-center">
-                {feature.description}
-              </p>
+              {feature.icon}
+              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <p className="text-gray-300 text-center">{feature.description}</p>
             </motion.div>
           ))}
         </div>
@@ -153,51 +168,106 @@ const AboutPage = () => {
 
       {/* Why Choose Us Section */}
       <motion.section
-        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-16 text-center text-gray-800"
+        className="py-12 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-16 text-center"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
       >
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6">
+        <h2 id="stats" className="text-3xl font-semibold mb-6">
           Why Choose Wealth Tracker?
         </h2>
-        <p className="text-xs sm:text-sm lg:text-base max-w-3xl mx-auto mb-10">
+        <p className="text-lg max-w-3xl mx-auto mb-10 text-gray-200">
           Unlike other finance apps, we offer deep insights, smart automation,
           and secure data management. Our goal is to provide a seamless
           experience in financial tracking, helping you build wealth and make
           informed decisions.
         </p>
-        <Button
-          variant="secondary"
-          className="text-xs sm:text-sm lg:text-base px-6 py-3 hover:scale-105 transition-transform duration-300 cursor-pointer"
-        >
-          Start Managing Your Wealth
-        </Button>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
+          {statsData.map((stat, index) => (
+            <motion.div
+              key={index}
+              className={`bg-gray-700 p-6 rounded-lg shadow-lg flex flex-col items-center hover:shadow-xl ${
+                index === 8 ? "md:col-start-2" : ""
+              }`}
+              variants={{
+                hidden: { opacity: 0, scale: 0.5 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.5, delay: index * 0.3 },
+                },
+              }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <h1 className="text-2xl font-extrabold mb-1">{stat.value}</h1>
+              <p className="text-gray-200 text-center">{stat.label}</p>
+            </motion.div>
+          ))}
+        </div>
       </motion.section>
 
-      {/* Testimonials Section */}
+      {/* how it works Section */}
       <motion.section
-        className="py-12 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-16 text-center rounded-xl"
+        className="py-12 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-16 text-center text-black"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
         variants={sectionVariants}
       >
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 text-gray-900">
+        <h2 id="how-it-works" className="text-3xl font-semibold mb-6">
+          Your Journey to Smarter Finances
+        </h2>
+        <p className="text-lg max-w-3xl mx-auto mb-10 text-gray-800">
+          Discover a simpler, smarter way to stay on top of your money. Whether
+          you're just starting out or refining your financial goals, we make the
+          journey intuitive and rewarding.
+        </p>
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+          {howItWorksData.map((data, index) => (
+            <motion.div
+              key={index}
+              className={`bg-gray-500 p-6 rounded-lg shadow-lg flex flex-col items-center hover:shadow-xl`}
+              variants={{
+                hidden: { opacity: 0, scale: 0.5 },
+                visible: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: { duration: 0.5, delay: index * 0.3 },
+                },
+              }}
+              whileHover={{ scale: 1.05 }}
+            >
+              <data.icon className="h-8 w-8 text-blue-800" />
+              <h3 className="text-xl font-semibold mb-2">{data.title}</h3>
+              <p className="text-gray-800 text-center">{data.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </motion.section>
+
+      {/* Testimonials Section */}
+      <motion.section
+        className="py-12 sm:py-14 lg:py-16 px-4 sm:px-8 lg:px-16 text-center rounded-xl text-black"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={sectionVariants}
+      >
+        <h2 id="testimonials" className="text-3xl font-semibold mb-6">
           What Our Users Say
         </h2>
-        <p className="text-xs sm:text-sm lg:text-base max-w-3xl mx-auto mb-10 text-gray-900">
+        <p className="text-lg max-w-3xl mx-auto mb-10 text-gray-900">
           Our users have transformed their financial lives with Wealth Tracker.
           See what they have to say!
         </p>
-        <div className="grid md:grid-cols-2 gap-8">
-          {testimonials.map((testimonial, index) => (
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
+          {testimonialsData.map((testimonial, index) => (
             <motion.div
               key={index}
-              className={`bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-xl ${
-                testimonials.length % 2 !== 0 &&
-                index === testimonials.length - 1
+              className={`bg-gray-400 p-6 rounded-lg shadow-lg hover:shadow-xl ${
+                testimonialsData.length % 2 !== 0 &&
+                index === testimonialsData.length - 1
                   ? "md:col-span-2 mx-auto"
                   : ""
               }`}
@@ -211,12 +281,22 @@ const AboutPage = () => {
               }}
               whileHover={{ scale: 1.05 }}
             >
-              <p className="text-xs sm:text-sm lg:text-base text-gray-300 italic">
-                “{testimonial.quote}”
-              </p>
-              <h4 className="text-sm sm:text-base lg:text-lg font-semibold mt-4">
-                - {testimonial.name}
-              </h4>
+              <p className="text-gray-900 italic">“{testimonial.quote}”</p>
+              <div className="flex items-center justify-center space-x-2 mt-3">
+                <Image
+                  src={testimonial.image}
+                  alt={testimonial.name}
+                  className="w-10 h-10 rounded-full"
+                  width={100}
+                  height={100}
+                />
+                <div className="flex flex-col mt-2">
+                  <h3 className="text-lg font-semibold leading-5">
+                    {testimonial.name}
+                  </h3>
+                  <p className="text-gray-900 text-sm">{testimonial.role}</p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </div>
