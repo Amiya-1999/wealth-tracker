@@ -4,10 +4,14 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 import { LayoutDashboard, PenBox, PiggyBank } from "lucide-react";
+import { checkUser } from "@/lib/checkUser";
+import { fontPrompt } from "@/app/fonts";
 
-const Header = () => {
+const Header = async () => {
+  await checkUser();
+
   return (
-    <div className="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b">
+    <div className="fixed top-0 w-full bg-gradient-to-r from-white/50 to-blue-50 backdrop-blur-md shadow-md z-50">
       <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
         <Link href="/">
           <Image
@@ -24,33 +28,29 @@ const Header = () => {
               href="/dashboard"
               className="text-gray-700 hover:text-gray-900"
             >
-              <Button variant="ghost">
-                <LayoutDashboard className="h-4 w-4" />
-                <span className="hidden md:inline">Dashboard</span>
+              <Button variant="ghost" className="font-semibold">
+                <LayoutDashboard />
+                <span className="hidden md:inline md:text-base md:pt-1">Dashboard</span>
               </Button>
             </Link>
             <Link
               href="/transaction/create"
               className="text-gray-700 hover:text-gray-900"
             >
-              <Button variant="ghost">
+              <Button variant="ghost" className="font-semibold">
                 <PenBox className="h-4 w-4" />
-                <span className="hidden md:inline">Add Transaction</span>
-              </Button>
-            </Link>
-            <Link href="/account" className="text-gray-700 hover:text-gray-900">
-              <Button variant="ghost">
-                <PiggyBank className="h-4 w-4" />
-                <span className="hidden md:inline">Account</span>
+                <span className="hidden md:inline md:text-base md:pt-1">
+                  Add Transaction
+                </span>
               </Button>
             </Link>
             <UserButton />
           </SignedIn>
           <SignedOut>
-            <SignInButton>
+            <SignInButton forceRedirectUrl="/dashboard">
               <Button
                 variant="outline"
-                className="text-gray-700 hover:text-gray-900"
+                className="text-gray-700 hover:text-gray-900 font-semibold"
               >
                 Login
               </Button>

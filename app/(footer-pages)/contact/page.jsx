@@ -25,7 +25,7 @@ export default function ContactUs() {
 
   return (
     <div
-      className={`${fontBadScript.className} bg-gradient-to-b from-gray-800 via-gray-500 to-gray-300 min-h-screen flex flex-col items-center justify-center pt-16 px-6`}
+      className={`${fontBadScript.className} bg-gradient-to-b from-gray-800 via-gray-500 to-gray-300 min-h-screen flex flex-col items-center justify-center pt-32 pb-10 px-6`}
     >
       <motion.div
         initial={{ opacity: 0, y: -50 }}

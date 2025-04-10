@@ -1,5 +1,5 @@
 import "./globals.css";
-import { fontInter } from "./fonts";
+import { fontJosefinSans } from "./fonts";
 import Footer from "../components/footer";
 import Header from "@/components/header";
 import { ClerkProvider } from "@clerk/nextjs";
@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={`${fontInter.className} antialiased`}>
+        <body className={`${fontJosefinSans.className} antialiased`}>
           <Header />
           <main className="min-h-screen"> {children}</main>
           <Footer />

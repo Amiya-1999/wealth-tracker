@@ -62,7 +62,7 @@ const FinancialBlogPage = () => {
 
   return (
     <div
-      className={`${fontCormorantGaramond.className} bg-gradient-to-b from-gray-800 via-gray-500 to-gray-300 min-h-screen p-6 pt-24`}
+      className={`${fontCormorantGaramond.className} bg-gradient-to-b from-gray-800 via-gray-500 to-gray-300 min-h-screen p-6 pt-32`}
     >
       <div className="max-w-5xl mx-auto text-center">
         <motion.h1
